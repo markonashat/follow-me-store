@@ -1,0 +1,423 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Follow Me _ Mark Ruble</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial;
+        background-color: #f2f2f2;
+      }
+
+      /* الهيدر */
+      .header {
+        background-color: #1e4263;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 60px;
+      }
+
+      .logo-text {
+        color: white;
+        font-size: 34px;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .header-links {
+        display: flex;
+        gap: 30px;
+      }
+
+      .header a {
+        text-decoration: none;
+        color: white;
+        font-size: 24px;
+      }
+
+      .header a i {
+        margin-right: 8px;
+        font-size: 28px;
+      }
+
+      /* ألوان أيقونات الهيدر */
+      .header-links .fa-whatsapp {
+        color: #25d366;
+      }
+
+      .header-links .fa-facebook {
+        color: #1877f2;
+      }
+
+      .header-links .fa-tiktok {
+        color: #000000;
+      }
+
+      /* الجزء الأزرق */
+      .landing-page {
+        background-color: #073763;
+        margin: 20px;
+        border-radius: 25px;
+        padding: 70px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+      }
+
+      .landing-text p:first-child {
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+
+      .landing-text h1 {
+        font-size: 56px;
+        margin: 0 0 20px 0;
+      }
+
+      .landing-text p:last-child {
+        font-size: 30px;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      .landing-page img {
+        width: 340px;
+        border-radius: 15px;
+      }
+
+      /* المنتجات */
+      .products {
+        padding: 30px 60px;
+      }
+
+      .products h2 {
+        font-size: 42px;
+        margin-bottom: 25px;
+      }
+
+      .products-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .products a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .product-card {
+        background-color: white;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-sizing: border-box;
+      }
+
+      .product-card:hover {
+        transform: scale(1.03);
+      }
+
+      .product-card img {
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      .product-card p {
+        font-size: 24px;
+        margin: 15px 0 10px;
+      }
+
+      /* زرار واتساب */
+      .order-btn {
+        margin-top: 10px;
+        background-color: #25d366;
+        color: white;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: 20px;
+        display: inline-block;
+      }
+
+      .order-btn i {
+        margin-right: 6px;
+        color: white;
+        font-size: 24px;
+      }
+
+      .order-btn:hover {
+        background-color: #1ebe5d;
+      }
+
+      /* الأزرار الجانبية */
+      .floating {
+        position: fixed;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 24px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        transition: 0.3s;
+      }
+
+      .floating:hover {
+        transform: scale(1.1);
+      }
+
+      .floating i {
+        color: white;
+      }
+
+      .whatsapp-float {
+        background-color: #25d366;
+        bottom: 90px;
+      }
+
+      .call-float {
+        background-color: #f4b400;
+        bottom: 20px;
+      }
+
+      /* للموبايل */
+      @media (max-width: 768px) {
+        .header {
+          padding: 20px;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .logo-text {
+          font-size: 28px;
+        }
+
+        .header-links {
+          gap: 15px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .header a {
+          font-size: 18px;
+        }
+
+        .header a i {
+          font-size: 22px;
+        }
+
+        .landing-page {
+          flex-direction: column;
+          text-align: center;
+          padding: 35px 20px;
+        }
+
+        .landing-text p:first-child {
+          font-size: 22px;
+        }
+
+        .landing-text h1 {
+          font-size: 36px;
+        }
+
+        .landing-text p:last-child {
+          font-size: 20px;
+        }
+
+        .landing-page img {
+          width: 220px;
+          margin-top: 20px;
+        }
+
+        .products {
+          padding: 20px;
+        }
+
+        .products h2 {
+          font-size: 32px;
+        }
+
+        .products-container {
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+        }
+
+        .product-card p {
+          font-size: 18px;
+        }
+
+        .order-btn {
+          font-size: 16px;
+          padding: 8px 12px;
+        }
+
+        .order-btn i {
+          font-size: 18px;
+        }
+
+        .floating {
+          right: 15px;
+          width: 50px;
+          height: 50px;
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- الهيدر -->
+    <div class="header">
+      <div class="logo-text">FM</div>
+
+      <div class="header-links">
+        <a href="https://wa.me/201552007436" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <a href="https://www.facebook.com/share/1E2ivfzrdF/" target="_blank">
+          <i class="fa-brands fa-facebook"></i> Facebook
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@user4280240735087?_r=1&_t=ZS-94xQVf7Vs0Y"
+          target="_blank"
+        >
+          <i class="fa-brands fa-tiktok"></i> TikTok
+        </a>
+      </div>
+    </div>
+
+    <!-- الجزء الأزرق -->
+    <div class="landing-page">
+      <div class="landing-text">
+        <p>Welcome to our store!</p>
+        <h1>Your favorite fashion</h1>
+        <p>
+          High-quality women’s clothing designed to make you stand out. Elegant
+          styles, perfect fit, and unmatched quality.
+
+          <br />Shop now and elevate your look ✨. <br />Follow us on our social
+          media platforms to stay updated with the latest trends and exclusive
+          offers🔥 <br />Follow Me🫀💥
+        </p>
+      </div>
+
+      <img src="images/logo1.webp" />
+    </div>
+
+    <!-- المنتجات -->
+    <div class="products">
+      <h2>Products</h2>
+
+      <div class="products-container">
+        <a
+          href="https://wa.me/201552007436?text=I want Product 1"
+          target="_blank"
+        >
+          <div class="product-card">
+            <img src="images/photo1.jpg" />
+            <p>Product 1</p>
+            <div class="order-btn">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://wa.me/201552007436?text=I want Product 2"
+          target="_blank"
+        >
+          <div class="product-card">
+            <img src="images/photo2.jpg" />
+            <p>Product 2</p>
+            <div class="order-btn">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://wa.me/201552007436?text=I want Product 3"
+          target="_blank"
+        >
+          <div class="product-card">
+            <img src="images/photo3.jpg" />
+            <p>Product 3</p>
+            <div class="order-btn">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://wa.me/201552007436?text=I want Product 4"
+          target="_blank"
+        >
+          <div class="product-card">
+            <img src="images/photo4.jpg" />
+            <p>Product 4</p>
+            <div class="order-btn">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://wa.me/201552007436?text=I want Product 5"
+          target="_blank"
+        >
+          <div class="product-card">
+            <img src="images/photo5.jpg" />
+            <p>Product 5</p>
+            <div class="order-btn">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://wa.me/201552007436?text=I want Product 6"
+          target="_blank"
+        >
+          <div class="product-card">
+            <img src="images/photo6.jpg" />
+            <p>Product 6</p>
+            <div class="order-btn">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- زرار واتساب الجانبي -->
+    <a
+      href="https://wa.me/201552007436"
+      class="floating whatsapp-float"
+      target="_blank"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- زرار الاتصال الجانبي -->
+    <a href="tel:01552007436" class="floating call-float">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </body>
+</html>
