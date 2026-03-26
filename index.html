@@ -75,6 +75,10 @@
         color: white;
       }
 
+      .header-links .fa-telegram {
+        color: #229ed9;
+      }
+
       /* الجزء الرئيسي */
       .landing-page {
         margin: 25px;
@@ -120,7 +124,7 @@
 
       /* المنتجات */
       .products {
-        padding: 35px 60px 60px;
+        padding: 75px 50px 150px;
       }
 
       .products h2 {
@@ -129,10 +133,18 @@
         color: #12385f;
       }
 
+      /* الجريد */
       .products-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
+      }
+
+      /* الموبايل */
+      @media (max-width: 768px) {
+        .products-container {
+          grid-template-columns: 1fr;
+        }
       }
 
       .products a {
@@ -140,55 +152,73 @@
         color: inherit;
       }
 
+      /* الكارت */
       .product-card {
         background: white;
-        border-radius: 18px;
+        border-radius: 30px;
         padding: 14px;
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
       }
 
       .product-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
       }
 
-      .product-card img {
+      /* 🔥 حاوية الصورة */
+      .product-card .img-box {
         width: 100%;
         height: 320px;
-        object-fit: cover;
-        border-radius: 14px;
+        overflow: hidden;
+        border-radius: 20px;
       }
 
+      /* 🔥 الصورة */
+      .product-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* يرجع يملى المكان */
+        transition: transform 0.5s ease;
+      }
+
+      /* 🔥 زووم عند الهوفر */
+      .product-card:hover img {
+        transform: scale(1.08);
+      }
+
+      /* اسم المنتج */
       .product-card p {
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 600;
         margin: 16px 0 12px;
       }
 
+      /* زر الطلب */
       .order-btn {
         margin-top: 8px;
-        background-color: #25d366;
+        background: linear-gradient(135deg, #25d366, #1ebe5d);
         color: white;
-        padding: 12px 18px;
-        border-radius: 10px;
-        font-size: 22px;
+        padding: 14px 22px;
+        border-radius: 12px;
+        font-size: 20px;
         font-weight: bold;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: 10px;
         transition: 0.3s;
       }
 
       .order-btn:hover {
-        background-color: #1ebe5d;
+        transform: scale(1.05);
       }
 
       .order-btn i {
         color: white;
-        font-size: 32px;
+        font-size: 26px;
       }
 
       /* الأزرار الجانبية */
@@ -225,6 +255,7 @@
       .call-float {
         background: #f4b400;
         bottom: 20px;
+        animation: pulse 1.5s infinite;
       }
 
       @keyframes pulse {
@@ -308,11 +339,12 @@
         }
 
         .order-btn {
-          font-size: 18px;
+          font-size: 20px;
+          padding: 12px 18px;
         }
 
         .order-btn i {
-          font-size: 26px;
+          font-size: 30px;
         }
 
         .floating {
@@ -347,6 +379,10 @@
         >
           <i class="fa-brands fa-tiktok"></i> TikTok
         </a>
+
+        <a href="#" target="_blank">
+          <i class="fa-brands fa-telegram"></i> Telegram
+        </a>
       </div>
     </div>
 
@@ -369,7 +405,7 @@
 
     <!-- المنتجات -->
     <div class="products">
-      <h2>Products</h2>
+      <h2>الموديلات</h2>
 
       <div class="products-container">
         <a
