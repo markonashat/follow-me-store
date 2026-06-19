@@ -1,0 +1,31 @@
+<style>
+body {
+      margin: 0;
+    }
+    .header {
+      background-color: #bcbcbc;
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+        align-items: center;
+        padding : 10px 10px;
+    }
+    .logo {
+      width: 59px;
+    }
+    .header a {
+      text-decoration: none;
+      color: light purple;
+      font-size: 25px;
+      margin-left: 20px;
+    }
+    .header-links a:hover {
+      color: blueviolet;
+      padding: 5% 10px;
+      text-emphasis: none;
+    background-repeat: 15px;
+    }
+    .header-links a {
+    transition: 0.3s;
+}
+</style>
