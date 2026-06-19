@@ -33,8 +33,8 @@
     .nav-center a { text-decoration:none; color:#333; font-weight:600; font-size:17px; transition:0.3s; }
     .nav-center a:hover { color:var(--accent); }
     
-    .header-icons { display:flex; gap:20px; align-items:center; }
-    .header-icons a { font-size:26px; color:#333; transition:all 0.3s ease; }
+    .header-icons { display:flex; gap:18px; align-items:center; }
+    .header-icons a { font-size:24px; color:#333; transition:all 0.3s ease; }
     .header-icons a:hover { color:var(--accent); transform:translateY(-3px); }
     
     .hero {
@@ -63,7 +63,6 @@
       border: 2px solid #555;
     }
     
-    /* === أنيميشن الشعاع اللي بيلف على الإطار فقط === */
     .btn-primary::before {
       content: '';
       position: absolute;
@@ -250,32 +249,64 @@
       gap: 8px;
     }
 
-    /* ==================== RESPONSIVE ==================== */
+    /* ==================== RESPONSIVE - محسن للموبايل ==================== */
     @media (max-width: 1024px) {
       .hero h1 { font-size: 58px; }
       .hero p { font-size: 20px; }
     }
     
     @media (max-width: 768px) {
-      .nav { padding: 0 20px; height: 75px; }
-      .logo { font-size: 32px; }
+      .nav { padding: 0 15px; height: 70px; }
+      .logo { font-size: 28px; }
       .nav-center { display: none; }
-      .hero { height: 70vh; }
+      .nav-search { width: 180px; margin: 0 10px; }
+      .nav-search input { font-size: 14px; padding: 8px 35px 8px 14px; }
+      .header-icons { gap: 12px; }
+      .header-icons a { font-size: 20px; }
+      
+      .hero { height: 65vh; }
+      .hero-content { padding: 0 20px; }
       .hero h1 { font-size: 42px; }
       .hero p { font-size: 18px; }
       .btn { padding: 14px 32px; font-size: 16px; }
+      
       .section { margin: 50px auto; padding: 0 15px; }
-      .section-title { font-size: 28px; margin-bottom: 35px; }
-      .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-      .product-card img { height: 280px; }
+      .section-title { font-size: 26px; margin-bottom: 30px; }
+      
+      .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .category-image { height: 160px; }
+      .category-overlay h3 { font-size: 20px; }
+      
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .product-card img { height: 240px; }
+      .product-card { border-radius: 16px; }
+      
+      .modal-content { padding: 25px 20px; max-height: 95vh; }
+      .variants-grid { grid-template-columns: 1fr; gap: 18px; }
+      .variant-card img { height: 220px; }
     }
     
     @media (max-width: 480px) {
-      .categories-grid { grid-template-columns: 1fr; }
-      .products-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 36px; }
+      .nav { height: 65px; }
+      .logo { font-size: 24px; }
+      .nav-search { width: 140px; }
+      .header-icons { gap: 10px; }
+      .header-icons a { font-size: 18px; }
+      
+      .hero { height: 60vh; }
+      .hero h1 { font-size: 34px; }
       .hero p { font-size: 16px; }
+      .btn { padding: 12px 26px; font-size: 15px; }
+      
+      .section-title { font-size: 22px; }
+      .categories-grid { grid-template-columns: 1fr; gap: 12px; }
+      .category-image { height: 180px; }
+      
+      .products-grid { grid-template-columns: 1fr; gap: 15px; }
+      .product-card img { height: 280px; }
+      
+      .floating { width: 58px; height: 58px; font-size: 26px; }
+      .whatsapp-float { bottom: 95px; }
     }
     
     .category-card, .product-card {
@@ -443,7 +474,7 @@
       { id: 29, name: "عباية محجبات شتوية إضافية", category: "محجبات", isNew: true, image: "https://picsum.photos/id/201/600/700", description: "عباية محجبات شتوية إضافية.", variants: [{colorName:"كحلي", image:"https://picsum.photos/id/201/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/160/400/500"}] },
       { id: 30, name: "عباية محجبات كاجوال 3", category: "محجبات", isNew: true, image: "https://picsum.photos/id/1005/600/700", description: "عباية محجبات كاجوال إضافية.", variants: [{colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}] },
       { id: 31, name: "طقم محجبات قطن ناعم 2", category: "محجبات", isNew: false, image: "https://picsum.photos/id/1011/600/700", description: "طقم محجبات قطن ناعم إضافي.", variants: [{colorName:"أبيض", image:"https://picsum.photos/id/106/400/500"}, {colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}] },
-      { id: 32, name: "عباية محجبات شتوية 2", category: "مح.jbossات", isNew: true, image: "https://picsum.photos/id/201/600/700", description: "عباية محجبات شتوية إضافية.", variants: [{colorName:"كحلي", image:"https://picsum.photos/id/201/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/160/400/500"}] },
+      { id: 32, name: "عباية محجبات شتوية 2", category: "محجبات", isNew: true, image: "https://picsum.photos/id/201/600/700", description: "عباية محجبات شتوية إضافية.", variants: [{colorName:"كحلي", image:"https://picsum.photos/id/201/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/160/400/500"}] },
       { id: 33, name: "عباية محجبات كاجوال 4", category: "محجبات", isNew: true, image: "https://picsum.photos/id/1005/600/700", description: "عباية محجبات كاجوال إضافية.", variants: [{colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}] },
       { id: 34, name: "طقم محجبات قطن ناعم 3", category: "محجبات", isNew: false, image: "https://picsum.photos/id/1011/600/700", description: "طقم محجبات قطن ناعم إضافي.", variants: [{colorName:"أبيض", image:"https://picsum.photos/id/106/400/500"}, {colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}] },
 
