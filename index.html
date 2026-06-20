@@ -9,13 +9,13 @@
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&amp;display=swap');
     
     :root {
-      --primary: #2c2c2c;
+      --primary: #1f2937;
       --accent: #c9a26b;
-      --bg: #f8f5f0;
+      --bg: #f8f1e9;
     }
     
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Cairo', sans-serif; background: var(--bg); color:#2c2c2c; }
+    body { font-family: 'Cairo', sans-serif; background: var(--bg); color:#1f2937; }
     
     header {
       background:#fff; box-shadow:0 4px 20px rgba(0,0,0,0.06);
@@ -23,317 +23,158 @@
     }
     
     .nav {
-      max-width:1400px; margin:auto; padding:0 40px;
-      display:flex; justify-content:space-between; align-items:center; height:92px;
+      max-width:1400px; margin:auto; padding:0 25px;
+      display:flex; justify-content:space-between; align-items:center; height:85px;
     }
     
-    .logo { font-size:42px; font-weight:800; color:var(--primary); letter-spacing:3px; }
+    .logo {
+      font-size:32px; font-weight:800; color:var(--primary); letter-spacing:2px;
+      display:flex; align-items:center; gap:8px;
+    }
     
-    .nav-center { display:flex; gap:42px; }
-    .nav-center a { text-decoration:none; color:#333; font-weight:600; font-size:17px; transition:0.3s; }
+    .nav-center { display:flex; gap:32px; }
+    .nav-center a { text-decoration:none; color:#374151; font-weight:600; font-size:16px; transition:0.3s; }
     .nav-center a:hover { color:var(--accent); }
     
-    .header-icons { display:flex; gap:18px; align-items:center; }
-    .header-icons a { font-size:24px; color:#333; transition:all 0.3s ease; }
-    .header-icons a:hover { color:var(--accent); transform:translateY(-3px); }
+    .header-icons {
+      display:flex; gap:14px; align-items:center;
+    }
+    .header-icons a {
+      font-size:21px; color:#374151; transition:all 0.3s ease;
+    }
+    .header-icons a:hover {
+      color:var(--accent); transform:translateY(-3px);
+    }
+    
+    .hamburger {
+      display:none; font-size:26px; cursor:pointer; color:#374151;
+    }
     
     .hero {
-      height:94vh;
-      background: linear-gradient(rgba(44,44,44,0.55), rgba(44,44,44,0.55)),
-                  url('https://picsum.photos/id/1011/2000/1200') center/cover;
-      display:flex; align-items:center; color:white;
+      background: #f8f1e9;
+      padding: 60px 0;
     }
     
-    .hero-content { max-width:1400px; margin:auto; padding:0 50px; text-align:center; }
-    .hero h1 { font-size:78px; margin-bottom:18px; font-weight:700; }
-    .hero p { font-size:25px; max-width:720px; margin:0 auto 45px; }
+    .hero-container {
+      max-width:1400px; margin:auto; padding:0 30px;
+      display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+    }
+    
+    .hero-text h1 { font-size:68px; font-weight:800; line-height:1.05; margin-bottom:15px; color:#1f2937; }
+    .hero-text p { font-size:22px; color:#4b5563; margin-bottom:35px; line-height:1.6; }
+    
+    .hero-image { border-radius:24px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.15); }
+    .hero-image img { width:100%; height:100%; object-fit:cover; display:block; }
     
     .btn {
-      padding:18px 46px; border-radius:50px; font-size:19px; font-weight:700;
-      text-decoration:none; display:inline-block;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      transition: background 0.3s ease;
+      padding:16px 42px; border-radius:50px; font-size:18px; font-weight:700;
+      text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+      transition:all 0.3s ease;
     }
+    .btn-primary { background:#1f2937; color:white; border:2px solid #1f2937; }
+    .btn-primary:hover { background:#111827; transform:translateY(-3px); }
     
-    .btn-primary { 
-      background: var(--primary); 
-      color: white;
-      border: 2px solid #555;
+    .section { max-width:1400px; margin:70px auto; padding:0 30px; }
+    .section-title { text-align:center; font-size:34px; margin-bottom:45px; color:#1f2937; font-weight:700; }
+    
+    .trust-bar {
+      background:white; border-radius:20px; padding:35px 40px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
     }
-    
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      width: calc(100% + 4px);
-      height: calc(100% + 4px);
-      border-radius: 55px;
-      background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        #c9a26b 90deg,
-        transparent 180deg
-      );
-      z-index: -1;
-      animation: spin-border 3s linear infinite;
-      opacity: 0.5;
+    .trust-grid {
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:30px;
     }
+    .trust-item { display:flex; align-items:center; gap:18px; }
+    .trust-item i { font-size:32px; color:#c9a26b; width:50px; }
     
-    @keyframes spin-border {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    .btn-primary:hover {
-      background: #3a3a3a;
-    }
-    
-    .section { max-width:1400px; margin:85px auto; padding:0 30px; }
-    .section-title { text-align:center; font-size:38px; margin-bottom:50px; color:var(--primary); font-weight:700; }
-
     .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 25px;
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:22px;
     }
-    
     .category-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      cursor: pointer;
-      transition: all 0.4s ease;
+      background:white; border-radius:18px; overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08); cursor:pointer;
+      transition:all 0.4s ease;
     }
-    .category-card:hover {
-      transform: translateY(-15px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
-    }
-    
-    .category-image {
-      height: 220px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .category-overlay {
-      text-align: center;
-      color: white;
-      z-index: 2;
-    }
-    .category-overlay h3 {
-      font-size: 26px;
-      margin-bottom: 10px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    }
-    
-    .view-btn {
-      display: inline-block;
-      background: rgba(255,255,255,0.95);
-      color: #2c2c2c;
-      padding: 9px 26px;
-      border-radius: 30px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: all 0.3s ease;
-    }
+    .category-card:hover { transform:translateY(-12px); }
+    .category-image { height:210px; background-size:cover; background-position:center; position:relative; }
+    .category-overlay { position:absolute; bottom:0; left:0; right:0; padding:20px; background:linear-gradient(transparent, rgba(0,0,0,0.65)); color:white; }
     
     .products-grid {
-      display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:30px;
+      display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:25px;
     }
-    
     .product-card {
-      background:white; border-radius:22px; overflow:hidden;
+      background:white; border-radius:20px; overflow:hidden;
       box-shadow:0 12px 35px rgba(0,0,0,0.1); transition:all 0.4s ease; cursor:pointer;
     }
-    .product-card:hover { transform:translateY(-18px); box-shadow:0 30px 60px rgba(0,0,0,0.15); }
-    .product-card img { width:100%; height:390px; object-fit:cover; }
+    .product-card:hover { transform:translateY(-15px); }
+    .product-card img { width:100%; height:320px; object-fit:cover; }
     
-    .modal {
-      display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8);
-      z-index:2000; justify-content:center; align-items:center; padding:20px;
+    .mobile-menu {
+      display:none; position:absolute; top:85px; left:0; right:0;
+      background:white; box-shadow:0 10px 30px rgba(0,0,0,0.1);
+      padding:15px 0; z-index:999;
     }
-    .modal-content {
-      background:white; width:100%; max-width:1180px; border-radius:26px;
-      padding:48px; position:relative; max-height:92vh; overflow-y:auto;
+    .mobile-menu a {
+      display:block; padding:18px 30px; font-size:18px; color:#374151;
+      border-bottom:1px solid #f1e9d9; text-decoration:none;
     }
-    .close { position:absolute; top:24px; left:28px; font-size:34px; cursor:pointer; color:#555; }
+    .mobile-menu a:last-child { border-bottom:none; }
     
-    .variants-grid {
-      display:grid; grid-template-columns:repeat(auto-fill,minmax(245px,1fr)); gap:28px; margin-top:32px;
-    }
+    .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:2000; align-items:center; justify-content:center; padding:20px; }
+    .modal-content { background:white; width:100%; max-width:1100px; border-radius:24px; padding:40px; max-height:92vh; overflow-y:auto; }
+    .close { font-size:32px; cursor:pointer; float:left; color:#555; }
     
-    .variant-card {
-      border:2px solid #eee; border-radius:18px; overflow:hidden; transition:all 0.3s ease;
-    }
-    .variant-card:hover { border-color:var(--accent); transform:scale(1.02); }
-    .variant-card img { width:100%; height:280px; object-fit:cover; }
+    .variants-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:22px; margin-top:25px; }
+    .variant-card { border:2px solid #eee; border-radius:16px; overflow:hidden; transition:0.3s; }
+    .variant-card:hover { border-color:#c9a26b; }
+    .variant-card img { width:100%; height:240px; object-fit:cover; }
+    .variant-info { padding:18px; text-align:center; }
     
-    .variant-info { padding:20px; text-align:center; }
-    .variant-info h4 { margin-bottom:16px; font-size:21px; color:var(--primary); }
+    .btn-whatsapp { background:#25d366; color:white; padding:12px 26px; border-radius:50px; display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:700; }
     
-    .btn-whatsapp {
-      background:#25d366; color:white; padding:13px 28px; border-radius:50px;
-      display:inline-flex; align-items:center; gap:9px; text-decoration:none;
-      font-weight:700; transition:0.3s;
-    }
-    .btn-whatsapp:hover { background:#1ebe5d; transform:scale(1.05); }
+    .floating { position:fixed; bottom:25px; right:25px; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; color:white; box-shadow:0 8px 25px rgba(0,0,0,0.25); z-index:1000; text-decoration:none; }
+    .whatsapp-float { background:#25d366; bottom:105px; }
+    .call-float { background:#1f2937; }
     
-    .floating {
-      position:fixed; bottom:30px; right:30px; width:72px; height:72px;
-      border-radius:50%; display:flex; align-items:center; justify-content:center;
-      font-size:36px; color:white; box-shadow:0 10px 30px rgba(0,0,0,0.3);
-      z-index:1000; text-decoration:none; transition:transform 0.3s ease;
-    }
-    .floating:hover { transform:scale(1.15); }
-    
-    .whatsapp-float { background:#25d366; bottom:120px; animation:pulse-whatsapp 2s infinite; }
-    @keyframes pulse-whatsapp {
-      0% { box-shadow:0 0 0 0 rgba(37,211,102,0.7); }
-      70% { box-shadow:0 0 0 24px rgba(37,211,102,0); }
-      100% { box-shadow:0 0 0 0 rgba(37,211,102,0); }
-    }
-    
-    .call-float { background:var(--primary); animation:pulse-call 2.5s infinite; }
-    @keyframes pulse-call {
-      0% { box-shadow:0 0 0 0 rgba(44,44,44,0.6); }
-      70% { box-shadow:0 0 0 22px rgba(44,44,44,0); }
-      100% { box-shadow:0 0 0 0 rgba(44,44,44,0); }
-    }
-    
-    .nav-search {
-      position: relative;
-      width: 260px;
-      margin: 0 20px;
-    }
-    .nav-search input {
-      width: 100%;
-      padding: 10px 40px 10px 18px;
-      border: 2px solid #e8e0d1;
-      border-radius: 50px;
-      font-size: 15px;
-      font-family: 'Cairo', sans-serif;
-      outline: none;
-      transition: all 0.3s ease;
-      background: #fff;
-    }
-    .nav-search input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 4px rgba(201, 162, 107, 0.1);
-    }
-    .nav-search i {
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #c9a26b;
-      font-size: 17px;
-      pointer-events: none;
-    }
-    
-    .click-hint {
-      margin-top: 12px;
-      color: #c9a26b;
-      font-weight: 700;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    /* ==================== RESPONSIVE - محسن للموبايل ==================== */
-    @media (max-width: 1024px) {
-      .hero h1 { font-size: 58px; }
-      .hero p { font-size: 20px; }
+    @media (max-width: 992px) {
+      .nav-center { display:none; }
+      .hamburger { display:block; }
+      .hero-container { grid-template-columns:1fr; text-align:center; }
+      .hero-image { margin-top:40px; }
     }
     
     @media (max-width: 768px) {
-      .nav { padding: 0 15px; height: 70px; }
-      .logo { font-size: 28px; }
-      .nav-center { display: none; }
-      .nav-search { width: 180px; margin: 0 10px; }
-      .nav-search input { font-size: 14px; padding: 8px 35px 8px 14px; }
-      .header-icons { gap: 12px; }
-      .header-icons a { font-size: 20px; }
-      
-      .hero { height: 65vh; }
-      .hero-content { padding: 0 20px; }
-      .hero h1 { font-size: 42px; }
-      .hero p { font-size: 18px; }
-      .btn { padding: 14px 32px; font-size: 16px; }
-      
-      .section { margin: 50px auto; padding: 0 15px; }
-      .section-title { font-size: 26px; margin-bottom: 30px; }
-      
-      .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .category-image { height: 160px; }
-      .category-overlay h3 { font-size: 20px; }
-      
-      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .product-card img { height: 240px; }
-      .product-card { border-radius: 16px; }
-      
-      .modal-content { padding: 25px 20px; max-height: 95vh; }
-      .variants-grid { grid-template-columns: 1fr; gap: 18px; }
-      .variant-card img { height: 220px; }
+      .hero-text h1 { font-size:42px; }
+      .hero-text p { font-size:18px; }
+      .categories-grid, .products-grid { grid-template-columns:repeat(2,1fr); }
+      .product-card img { height:240px; }
     }
     
     @media (max-width: 480px) {
-      .nav { height: 65px; }
-      .logo { font-size: 24px; }
-      .nav-search { width: 140px; }
-      .header-icons { gap: 10px; }
-      .header-icons a { font-size: 18px; }
-      
-      .hero { height: 60vh; }
-      .hero h1 { font-size: 34px; }
-      .hero p { font-size: 16px; }
-      .btn { padding: 12px 26px; font-size: 15px; }
-      
-      .section-title { font-size: 22px; }
-      .categories-grid { grid-template-columns: 1fr; gap: 12px; }
-      .category-image { height: 180px; }
-      
-      .products-grid { grid-template-columns: 1fr; gap: 15px; }
-      .product-card img { height: 280px; }
-      
-      .floating { width: 58px; height: 58px; font-size: 26px; }
-      .whatsapp-float { bottom: 95px; }
-    }
-    
-    .category-card, .product-card {
-      animation: fadeInUp 0.6s ease forwards;
-    }
-    
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      .categories-grid, .products-grid { grid-template-columns:1fr; }
+      .product-card img { height:280px; }
+      .mobile-menu a { padding:20px 25px; font-size:19px; }
     }
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header>
     <div class="nav">
-      <div class="logo">FM</div>
+      <div class="logo">
+        <i class="fas fa-user-tie"></i>
+        <span>FOLLOW ME</span>
+      </div>
+
       <div class="nav-center">
         <a href="#">الرئيسية</a>
         <a href="#categories">الأقسام</a>
         <a href="#products">الموديلات</a>
         <a href="#about">من نحن</a>
       </div>
-      <div class="nav-search">
-        <input type="text" id="headerSearch" placeholder="ابحث عن موديل..." onkeyup="searchFromHeader()">
-        <i class="fas fa-search"></i>
-      </div>
+
+      <!-- كل أيقونات التواصل رجعت -->
       <div class="header-icons">
         <a href="https://wa.me/201552007436" target="_blank"><i class="fab fa-whatsapp"></i></a>
         <a href="https://t.me/yourusername" target="_blank"><i class="fab fa-telegram"></i></a>
@@ -342,62 +183,84 @@
         <a href="https://www.instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="tel:01552007436"><i class="fas fa-phone"></i></a>
       </div>
+
+      <div class="hamburger" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">الرئيسية</a>
+      <a href="#categories">الأقسام</a>
+      <a href="#products">الموديلات</a>
+      <a href="#about">من نحن</a>
+      <a href="https://wa.me/201552007436" target="_blank">تواصل واتساب</a>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>FOLLOW ME</h1>
-      <p>مصنع ملابس حريمي فاخر • جودة عالية • أسعار جملة منافسة</p>
-      <button onclick="showAllProducts()" class="btn btn-primary">استعرض الموديلات</button>
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>FOLLOW ME</h1>
+        <p>مصنع ملابس حريمي فاخر<br>جودة عالية • أسعار جملة منافسة</p>
+        <a href="#products" class="btn btn-primary">
+          <i class="fas fa-shopping-bag"></i> عرض الموديلات
+        </a>
+      </div>
+      <div class="hero-image">
+        <img src="https://picsum.photos/id/1011/900/1100" alt="موديل أنيق">
+      </div>
     </div>
   </section>
+
+  <!-- Trust Bar -->
+  <div class="section" style="margin-top:20px; margin-bottom:30px;">
+    <div class="trust-bar">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <i class="fas fa-palette"></i>
+          <div><strong>تصميمات عصرية</strong><br><span style="font-size:14px; color:#666;">موديلات جديدة باستمرار</span></div>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-medal"></i>
+          <div><strong>جودة مضمونة</strong><br><span style="font-size:14px; color:#666;">خامات ممتازة</span></div>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-tags"></i>
+          <div><strong>أسعار جملة منافسة</strong><br><span style="font-size:14px; color:#666;">لأصحاب المحلات</span></div>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-truck"></i>
+          <div><strong>شحن لجميع المحافظات</strong><br><span style="font-size:14px; color:#666;">توصيل سريع وآمن</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Categories -->
   <section class="section" id="categories">
     <h2 class="section-title">تسوق حسب القسم</h2>
     <div class="categories-grid">
-      <div class="category-card category-image" onclick="filterByCategory('محجبات')"
-           style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://picsum.photos/id/1005/600/400');">
-        <div class="category-overlay">
-          <h3>محجبات</h3>
-          <span class="view-btn">عرض</span>
+      <div class="category-card" onclick="filterByCategory('محجبات')">
+        <div class="category-image" style="background-image: url('https://picsum.photos/id/1005/600/500')">
+          <div class="category-overlay"><h3>محجبات</h3></div>
         </div>
       </div>
-      <div class="category-card category-image" onclick="filterByCategory('فستان')"
-           style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://picsum.photos/id/1011/600/400');">
-        <div class="category-overlay">
-          <h3>فستان</h3>
-          <span class="view-btn">عرض</span>
+      <div class="category-card" onclick="filterByCategory('فستان')">
+        <div class="category-image" style="background-image: url('https://picsum.photos/id/1011/600/500')">
+          <div class="category-overlay"><h3>فستان</h3></div>
         </div>
       </div>
-      <div class="category-card category-image" onclick="filterByCategory('كاجوال')"
-           style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://picsum.photos/id/160/600/400');">
-        <div class="category-overlay">
-          <h3>كاجوال</h3>
-          <span class="view-btn">عرض</span>
+      <div class="category-card" onclick="filterByCategory('كاجوال')">
+        <div class="category-image" style="background-image: url('https://picsum.photos/id/160/600/500')">
+          <div class="category-overlay"><h3>كاجوال</h3></div>
         </div>
       </div>
-      <div class="category-card category-image" onclick="filterByCategory('سوارية')"
-           style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://picsum.photos/id/201/600/400');">
-        <div class="category-overlay">
-          <h3>سوارية</h3>
-          <span class="view-btn">عرض</span>
-        </div>
-      </div>
-      <div class="category-card category-image" onclick="filterByCategory('بلوزات')"
-           style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://picsum.photos/id/106/600/400');">
-        <div class="category-overlay">
-          <h3>بلوزات</h3>
-          <span class="view-btn">عرض</span>
-        </div>
-      </div>
-      <div class="category-card category-image" onclick="filterByCategory('جميع')"
-           style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://picsum.photos/id/1005/600/400');">
-        <div class="category-overlay">
-          <h3>عرض الكل</h3>
-          <span class="view-btn">استعرض كل الموديلات</span>
+      <div class="category-card" onclick="filterByCategory('سوارية')">
+        <div class="category-image" style="background-image: url('https://picsum.photos/id/201/600/500')">
+          <div class="category-overlay"><h3>سوارية</h3></div>
         </div>
       </div>
     </div>
@@ -410,39 +273,10 @@
   </section>
 
   <!-- من نحن -->
-  <section class="section" id="about" style="background:white; border-radius:24px; padding:70px 50px; margin:60px auto; box-shadow:0 10px 40px rgba(0,0,0,0.06);">
-    <h2 class="section-title" style="margin-bottom:25px;">من نحن</h2>
-    <div style="max-width:920px; margin:auto; text-align:center; line-height:1.9; font-size:18.5px; color:#444;">
-      <p style="margin-bottom:22px;">
-        <strong>FOLLOW ME</strong> هو مصنع متخصص في تصنيع الملابس الحريمي الفاخرة بأعلى معايير الجودة منذ أكثر من ١٥ عامًا.
-      </p>
-      <p style="margin-bottom:22px;">
-        بنستخدم خامات مصرية ومستوردة فاخرة، ونركز على التفاصيل الدقيقة والتصميمات العصرية اللي تناسب المرأة العربية.
-      </p>
-      <p style="margin-bottom:22px;">
-        بنقدم أسعار جملة منافسة جدًا مع جودة عالية، وخدمة توصيل سريعة لجميع محافظات مصر.
-      </p>
-      <p>
-        هدفنا إن كل قطعة تطلع من مصنعنا تعكس الفخامة والراحة في نفس الوقت.
-      </p>
-    </div>
-   
-    <div style="display:flex; justify-content:center; gap:50px; margin-top:50px; flex-wrap:wrap;">
-      <div style="text-align:center;">
-        <i class="fas fa-award fa-3x" style="color:#c9a26b; margin-bottom:12px;"></i>
-        <h4 style="font-size:20px; margin-bottom:6px;">جودة فاخرة</h4>
-        <p style="color:#666; font-size:15px;">خامات مختارة بعناية</p>
-      </div>
-      <div style="text-align:center;">
-        <i class="fas fa-truck fa-3x" style="color:#c9a26b; margin-bottom:12px;"></i>
-        <h4 style="font-size:20px; margin-bottom:6px;">توصيل داخل مصر</h4>
-        <p style="color:#666; font-size:15px;">لجميع المحافظات</p>
-      </div>
-      <div style="text-align:center;">
-        <i class="fas fa-handshake fa-3x" style="color:#c9a26b; margin-bottom:12px;"></i>
-        <h4 style="font-size:20px; margin-bottom:6px;">أسعار جملة</h4>
-        <p style="color:#666; font-size:15px;">تنافسية ومرنة</p>
-      </div>
+  <section class="section" id="about" style="background:white; border-radius:20px; padding:60px 40px;">
+    <h2 class="section-title">من نحن</h2>
+    <div style="max-width:850px; margin:auto; text-align:center; font-size:18px; line-height:1.9; color:#444;">
+      <p><strong>FOLLOW ME</strong> مصنع متخصص في الملابس الحريمي الفاخرة بأعلى معايير الجودة منذ أكثر من ١٥ عامًا.</p>
     </div>
   </section>
 
@@ -450,7 +284,7 @@
   <div class="modal" id="productModal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="modalTitle" style="text-align:center; margin-bottom:32px; font-size:30px;"></h2>
+      <h2 id="modalTitle" style="text-align:center; margin-bottom:25px;"></h2>
       <div class="variants-grid" id="variantsContainer"></div>
     </div>
   </div>
@@ -461,7 +295,7 @@
 
   <script>
     let products = [
-      // محجبات (15 موديل)
+      // محجبات
       { id: 1, name: "عباية محجبات كاجوال", category: "محجبات", isNew: true, image: "https://picsum.photos/id/1005/600/700", description: "عباية مريحة بقصة كاجوال أنيقة.", variants: [{colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}, {colorName:"رمادي", image:"https://picsum.photos/id/160/400/500"}] },
       { id: 2, name: "طقم محجبات قطن ناعم", category: "محجبات", isNew: false, image: "https://picsum.photos/id/1011/600/700", description: "طقم محجبات كامل من القطن المصري الفاخر.", variants: [{colorName:"أبيض", image:"https://picsum.photos/id/106/400/500"}, {colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}] },
       { id: 3, name: "عباية محجبات شتوية", category: "محجبات", isNew: true, image: "https://picsum.photos/id/201/600/700", description: "عباية شتوية فاخرة ببطانة دافئة.", variants: [{colorName:"كحلي", image:"https://picsum.photos/id/201/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/160/400/500"}] },
@@ -477,8 +311,7 @@
       { id: 32, name: "عباية محجبات شتوية 2", category: "محجبات", isNew: true, image: "https://picsum.photos/id/201/600/700", description: "عباية محجبات شتوية إضافية.", variants: [{colorName:"كحلي", image:"https://picsum.photos/id/201/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/160/400/500"}] },
       { id: 33, name: "عباية محجبات كاجوال 4", category: "محجبات", isNew: true, image: "https://picsum.photos/id/1005/600/700", description: "عباية محجبات كاجوال إضافية.", variants: [{colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}] },
       { id: 34, name: "طقم محجبات قطن ناعم 3", category: "محجبات", isNew: false, image: "https://picsum.photos/id/1011/600/700", description: "طقم محجبات قطن ناعم إضافي.", variants: [{colorName:"أبيض", image:"https://picsum.photos/id/106/400/500"}, {colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}] },
-
-      // فستان (15 موديل)
+      // فستان
       { id: 5, name: "فستان سهرة طويل فاخر", category: "فستان", isNew: true, image: "https://picsum.photos/id/1011/600/700", description: "فستان سهرة طويل بتصميم أنيق.", variants: [{colorName:"أحمر", image:"https://picsum.photos/id/1011/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}, {colorName:"ذهبي", image:"https://picsum.photos/id/160/400/500"}] },
       { id: 6, name: "فستان كاجوال قصير أنيق", category: "فستان", isNew: false, image: "https://picsum.photos/id/160/600/700", description: "فستان كاجوال قصير بقصة مريحة.", variants: [{colorName:"أزرق", image:"https://picsum.photos/id/160/400/500"}, {colorName:"وردي", image:"https://picsum.photos/id/1005/400/500"}, {colorName:"أبيض", image:"https://picsum.photos/id/106/400/500"}] },
       { id: 7, name: "فستان ماكسي بطبعات", category: "فستان", isNew: true, image: "https://picsum.photos/id/1005/600/700", description: "فستان ماكسي طويل بطبعات أنيقة.", variants: [{colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}, {colorName:"أخضر", image:"https://picsum.photos/id/201/400/500"}] },
@@ -494,8 +327,7 @@
       { id: 42, name: "فستان ماكسي بطبعات 3", category: "فستان", isNew: true, image: "https://picsum.photos/id/1005/600/700", description: "فستان ماكسي بطبعات إضافي.", variants: [{colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}, {colorName:"أخضر", image:"https://picsum.photos/id/201/400/500"}] },
       { id: 43, name: "فستان سهرة قصير أنيق 3", category: "فستان", isNew: true, image: "https://picsum.photos/id/1011/600/700", description: "فستان سهرة قصير إضافي.", variants: [{colorName:"أحمر", image:"https://picsum.photos/id/1011/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}] },
       { id: 44, name: "فستان كاجوال ماكسي 3", category: "فستان", isNew: false, image: "https://picsum.photos/id/160/600/700", description: "فستان كاجوال ماكسي إضافي.", variants: [{colorName:"أزرق", image:"https://picsum.photos/id/160/400/500"}, {colorName:"وردي", image:"https://picsum.photos/id/1005/400/500"}] },
-
-      // كاجوال (15 موديل)
+      // كاجوال
       { id: 9, name: "طقم كاجوال قطن يومي", category: "كاجوال", isNew: true, image: "https://picsum.photos/id/1005/600/700", description: "طقم كاجوال مريح من القطن.", variants: [{colorName:"رمادي", image:"https://picsum.photos/id/160/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}, {colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}] },
       { id: 10, name: "بلوزة كاجوال + بنطلون واسع", category: "كاجوال", isNew: false, image: "https://picsum.photos/id/1011/600/700", description: "طقم كاجوال أنيق.", variants: [{colorName:"أبيض", image:"https://picsum.photos/id/106/400/500"}, {colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}] },
       { id: 11, name: "طقم رياضي كاجوال فاخر", category: "كاجوال", isNew: true, image: "https://picsum.photos/id/160/600/700", description: "طقم رياضي كاجوال بتصميم عصري.", variants: [{colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}, {colorName:"رمادي", image:"https://picsum.photos/id/160/400/500"}] },
@@ -511,8 +343,7 @@
       { id: 53, name: "طقم رياضي كاجوال فاخر 4", category: "كاجوال", isNew: true, image: "https://picsum.photos/id/160/600/700", description: "طقم رياضي كاجوال إضافي.", variants: [{colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}, {colorName:"رمادي", image:"https://picsum.photos/id/160/400/500"}] },
       { id: 54, name: "طقم كاجوال قطن يومي 6", category: "كاجوال", isNew: true, image: "https://picsum.photos/id/1005/600/700", description: "طقم كاجوال مريح إضافي.", variants: [{colorName:"رمادي", image:"https://picsum.photos/id/160/400/500"}, {colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}] },
       { id: 55, name: "بلوزة كاجوال + بنطلون واسع 5", category: "كاجوال", isNew: false, image: "https://picsum.photos/id/1011/600/700", description: "طقم كاجوال أنيق إضافي.", variants: [{colorName:"أبيض", image:"https://picsum.photos/id/106/400/500"}, {colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}] },
-
-      // سوارية (15 موديل)
+      // سوارية
       { id: 13, name: "طقم سوارية فاخر مطرز", category: "سوارية", isNew: true, image: "https://picsum.photos/id/201/600/700", description: "طقم سوارية فاخر بتطريز يدوي.", variants: [{colorName:"ذهبي", image:"https://picsum.photos/id/201/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/160/400/500"}, {colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}] },
       { id: 14, name: "عباية سوارية بتطريز", category: "سوارية", isNew: false, image: "https://picsum.photos/id/106/600/700", description: "عباية سوارية فاخرة بتطريز ذهبي.", variants: [{colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}, {colorName:"ذهبي", image:"https://picsum.photos/id/160/400/500"}] },
       { id: 25, name: "طقم سوارية فاخر إضافي", category: "سوارية", isNew: true, image: "https://picsum.photos/id/201/600/700", description: "طقم سوارية فاخر إضافي.", variants: [{colorName:"ذهبي", image:"https://picsum.photos/id/201/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/160/400/500"}] },
@@ -528,8 +359,7 @@
       { id: 65, name: "عباية سوارية بتطريز 6", category: "سوارية", isNew: false, image: "https://picsum.photos/id/106/600/700", description: "عباية سوارية فاخرة إضافية.", variants: [{colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}, {colorName:"ذهبي", image:"https://picsum.photos/id/160/400/500"}] },
       { id: 66, name: "طقم سوارية فاخر مطرز 7", category: "سوارية", isNew: true, image: "https://picsum.photos/id/201/600/700", description: "طقم سوارية فاخر إضافي.", variants: [{colorName:"ذهبي", image:"https://picsum.photos/id/201/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/160/400/500"}] },
       { id: 67, name: "عباية سوارية بتطريز 7", category: "سوارية", isNew: false, image: "https://picsum.photos/id/106/600/700", description: "عباية سوارية فاخرة إضافية.", variants: [{colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}, {colorName:"ذهبي", image:"https://picsum.photos/id/160/400/500"}] },
-
-      // بلوزات (15 موديل)
+      // بلوزات
       { id: 16, name: "بلوزة ستان ناعمة فاخرة", category: "بلوزات", isNew: true, image: "https://picsum.photos/id/106/600/700", description: "بلوزة ستان ناعمة بملمس فاخر.", variants: [{colorName:"أبيض", image:"https://picsum.photos/id/106/400/500"}, {colorName:"وردي", image:"https://picsum.photos/id/1005/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}] },
       { id: 17, name: "بلوزة شيفون بأكمام واسعة", category: "بلوزات", isNew: false, image: "https://picsum.photos/id/1005/600/700", description: "بلوزة شيفون خفيفة بأكمام واسعة.", variants: [{colorName:"أبيض", image:"https://picsum.photos/id/106/400/500"}, {colorName:"بيج", image:"https://picsum.photos/id/1005/400/500"}] },
       { id: 26, name: "بلوزة ستان فاخرة إضافية", category: "بلوزات", isNew: true, image: "https://picsum.photos/id/106/600/700", description: "بلوزة ستان فاخرة إضافية.", variants: [{colorName:"أبيض", image:"https://picsum.photos/id/106/400/500"}, {colorName:"أسود", image:"https://picsum.photos/id/201/400/500"}] },
@@ -552,7 +382,6 @@
     function renderProducts(filteredProducts = null, showAll = false) {
       const container = document.getElementById('products-grid');
       container.innerHTML = '';
-
       let toShow;
       if (filteredProducts) {
         toShow = filteredProducts;
@@ -561,7 +390,6 @@
       } else {
         toShow = products.slice(-12);
       }
-
       toShow.forEach(product => {
         const card = document.createElement('div');
         card.className = 'product-card';
@@ -646,6 +474,11 @@
       );
       renderProducts(filtered);
       document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
     }
 
     window.onload = () => {
